@@ -1,0 +1,7 @@
+{
+    "id": "remote-tunnel",
+    "version": "1.1.1",
+    "name": "Vscode Remote Tunnel",
+    "documentationURL": "https://code.visualstudio.com/docs/remote/tunnels",
+    "description": "Install vscode cli to enable tunneling for remote development."
+}
