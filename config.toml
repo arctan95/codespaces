@@ -12,7 +12,7 @@ plugins = ["git", "pass", "zoxide"]
 # Keep these envs unchanged!
 DISABLE_MAGIC_FUNCTIONS = "true"
 HOMEBREW_BUNDLE_FILE = "~/.config/homebrew/Brewfile"
-HOMEBREW_NO_AUTO_UPDATE = true
+HOMEBREW_NO_AUTO_UPDATE = "true"
 
 [alias]
 hm = "home-manager"
