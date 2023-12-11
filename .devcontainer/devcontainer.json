@@ -1,0 +1,69 @@
+{
+	"build": {
+		"dockerfile": "./Dockerfile",
+		"context": "."
+	},
+
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"username": "codespace",
+			"userUid": "1000",
+			"userGid": "1000",
+			"nonFreePackages": true,
+			"configureZshAsDefaultShell": true,
+			"installOhMyZsh": false,
+			"installOhMyZshConfig": false
+		},
+		"ghcr.io/devcontainers/features/nix:1": {
+			"version": "latest",
+			"extraNixConfig": "filter-syscalls = false,sandbox = false,experimental-features = nix-command flakes"
+		},
+		"./local-features/remote-tunnel": {
+			"version": "latest"
+		}
+	},
+
+	"overrideFeatureInstallOrder": [
+		"ghcr.io/devcontainers/features/common-utils",
+		"ghcr.io/devcontainers/features/nix",
+		"./local-features/remote-tunnel"
+	],
+
+	"remoteUser": "codespace",
+	"containerUser": "codespace",
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [
+		2222
+	],
+
+	"portsAttributes": {
+		"2222": {
+			"label": "ssh server"
+		}
+	},
+
+	"workspaceMount": "source=${localWorkspaceFolder}/repositories,target=/home/codespace/repositories,type=bind,consistency=cached",
+	"workspaceFolder": "/home/codespace/repositories",
+
+	"mounts": [
+		"source=nix,target=/nix,type=volume"
+	],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "curl -sSL https://raw.githubusercontent.com/arctan95/codespaces/HEAD/.devcontainer/first-run-setup.sh | bash",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			"settings": {},
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"GitHub.vscode-pull-request-github",
+				"maattdd.gitless"
+			]
+		}
+	}
+}
