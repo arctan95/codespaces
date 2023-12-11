@@ -1,2 +1,113 @@
 tap "homebrew/bundle"
 tap "homebrew/cask-versions"
+# Mac App Store command-line interface
+brew "mas"
+# Android SDK component
+cask "android-platform-tools"
+# Tools for building Android applications
+cask "android-studio"
+# Tool to flash OS images to SD cards & USB drives
+cask "balenaetcher"
+# 3D creation suite
+cask "blender"
+# C and C++ IDE
+cask "clion"
+# Universal database tool and SQL client
+cask "dbeaver-community"
+# Replacement for Docker Desktop
+cask "orbstack"
+# Utilities designed to make common development tasks easier
+cask "devtoys"
+# Matrix collaboration client
+cask "element"
+# Launcher for *Epic Games* games
+cask "epic-games"
+# Web browser
+cask "firefox"
+# Audio player
+cask "foobar2000"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Web browser
+cask "google-chrome"
+# Free and open-source media player
+cask "iina"
+# IDE for Java development - community edition
+cask "intellij-idea-ce"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
+# Free and open-source media player
+cask "kodi"
+# Open-source cross-platform alternative to AirDrop
+cask "localsend"
+# Software for Logitech devices
+cask "logi-options+"
+# Digital logic designer and simulator
+cask "logisim-evolution"
+# Trims video and audio files losslessly
+cask "losslesscut"
+# Provides updates to various Microsoft products
+cask "microsoft-auto-update"
+# Office suite
+cask "microsoft-office-2019"
+# Remote desktop client
+cask "microsoft-remote-desktop"
+# Cloud storage service platform
+cask "nutstore"
+# Open-source software for live streaming and screen recording
+cask "obs"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
+# Remote desktop
+cask "parsec"
+# Collaboration platform for API development
+cask "postman"
+# Peer to peer Bitorrent client
+cask "qbittorrent"
+# Instant messaging tool
+cask "qq"
+# Control your tools with a few keystrokes
+cask "raycast"
+# .NET IDE
+cask "rider"
+# Rust IDE
+cask "rustrover"
+# Snip or pin screenshots
+cask "snipaste"
+# Video game digital distribution service
+cask "steam"
+# App to switch hosts
+cask "switchhosts"
+# Terminal emulator, SSH and serial client
+cask "tabby"
+# Messaging app with a focus on speed and security
+cask "telegram"
+# Unpacks archive files
+cask "the-unarchiver"
+# Platform for 3D content
+cask "unity"
+# Management tool for Unity
+cask "unity-hub"
+# Virtual machines UI using QEMU
+cask "utm"
+# Disk encryption software focusing on security based on TrueCrypt
+cask "veracrypt"
+# Open-source code editor
+cask "visual-studio-code"
+# Create, manage, and run virtual machines
+cask "vmware-fusion"
+# Free messaging and calling application
+cask "wechat"
+# Wine wrapper built with SwiftUI
+cask "whisky"
+# All-in-one office suite
+cask "wpsoffice"
+# Mind mapping and brainstorming tool
+cask "xmind"
+# Multiplayer code editor
+cask "zed"
+# Mesh VPN client
+cask "zerotier-one"
+mas "Microsoft To Do", id: 1274495053
+mas "VidHub", id: 1659622164
+mas "Xcode", id: 497799835
