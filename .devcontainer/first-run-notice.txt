@@ -1,0 +1,8 @@
+👋 Welcome to Codespaces! 
+    - It includes runtimes and tools for Python, Node.js, Docker, and more. 
+    - It provides reproducible, declarative and reliable user environment achieved by home-manager. Learn more here: https://nix-community.github.io/home-manager.
+
+💡 Useful tips:
+    - Run `hms --flake <flake-uri>` to switch into a new generation.
+    - Run `asdf list` to show installed packages, `asdf global <name> <version>` to set the package global version.
+    - Run `code-cli tunnel service install` and follow the instructions to enable remote tunnel.
