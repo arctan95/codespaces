@@ -1,0 +1,7 @@
+👋 Welcome to Codespaces! 
+    - It includes runtimes and tools for Python, Node.js, Docker, and more. 
+    - It provides reproducible, declarative and reliable user environment achieved by home-manager. Learn more here: https://nix-community.github.io/home-manager
+
+💡 Useful tips:
+    - Run `home-manager switch --flake .` to switch into a new generation
+    - Run `tail -f /tmp/remote-tunnel.log` and follow the instructions to enable remote tunnel

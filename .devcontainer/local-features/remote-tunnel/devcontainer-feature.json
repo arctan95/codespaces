@@ -1,0 +1,8 @@
+{
+    "id": "remote-tunnel",
+    "version": "1.1.1",
+    "name": "Vscode Remote Tunnel",
+    "documentationURL": "https://code.visualstudio.com/docs/remote/tunnels",
+    "description": "Install the code CLI to enable tunneling for remote development.",
+    "postCreateCommand": "nohup bash -c '~/.vscode-cli/code tunnel --accept-server-license-terms &' > /tmp/remote-tunnel.log 2>&1"
+}
