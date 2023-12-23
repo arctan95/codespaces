@@ -1,0 +1,75 @@
+tap "homebrew/bundle"
+tap "homebrew/cask-versions"
+# Mac App Store command-line interface
+brew "mas"
+# Intelligent cloud storage platform
+cask "adrive"
+# Android SDK component
+cask "android-platform-tools"
+# Tools for building Android applications
+cask "android-studio"
+# 3D creation suite
+cask "blender"
+# Universal database tool and SQL client
+cask "dbeaver-community"
+# Launcher for *Epic Games* games
+cask "epic-games"
+# Web browser
+cask "firefox"
+# Web browser
+cask "google-chrome"
+# Free and open-source media player
+cask "iina"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
+# Free and open-source media player
+cask "kodi"
+# Trims video and audio files losslessly
+cask "losslesscut"
+# Provides updates to various Microsoft products
+cask "microsoft-auto-update"
+# Office suite
+cask "microsoft-office-2019"
+# Remote desktop client
+cask "microsoft-remote-desktop"
+# Music streaming platform
+cask "neteasemusic"
+# Cloud storage service platform
+cask "nutstore"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
+# Remote desktop
+cask "parsec"
+# Sideload iOS apps and games
+cask "playcover-community"
+# Collaboration platform for API development
+cask "postman"
+# Instant messaging tool
+cask "qq"
+# IDE for application development
+cask "qt-creator"
+# Snip or pin screenshots
+cask "snipaste"
+# Video game digital distribution service
+cask "steam"
+# App to switch hosts
+cask "switchhosts"
+# Messaging app with a focus on speed and security
+cask "telegram"
+# Unpacks archive files
+cask "the-unarchiver"
+# VPN and WiFi proxy
+cask "thunder"
+# Virtual machines UI using QEMU
+cask "utm"
+# Open-source code editor
+cask "visual-studio-code"
+# Create, manage, and run virtual machines
+cask "vmware-fusion"
+# Free messaging and calling application
+cask "wechat"
+# Mesh VPN client
+cask "zerotier-one"
+mas "Microsoft To Do", id: 1274495053
+mas "VidHub", id: 1659622164
+mas "Xcode", id: 497799835
