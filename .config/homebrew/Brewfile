@@ -1,4 +1,5 @@
 tap "homebrew/bundle"
+tap "homebrew/cask-versions"
 # Intelligent cloud storage platform
 cask "adrive"
 # Universal database tool and SQL client
@@ -20,7 +21,7 @@ cask "losslesscut"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
 # Office suite
-cask "microsoft-office"
+cask "microsoft-office-2019"
 # Remote desktop client
 cask "microsoft-remote-desktop"
 # Music streaming platform
