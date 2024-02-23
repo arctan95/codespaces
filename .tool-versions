@@ -1,0 +1,6 @@
+java adoptopenjdk-8.0.372+7 adoptopenjdk-17.0.10+7
+maven 3.5.4
+gradle 8.6
+golang 1.21.6
+nodejs 16.14.2 18.19.0
+rust 1.75.0
