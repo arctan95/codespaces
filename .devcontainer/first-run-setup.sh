@@ -96,7 +96,14 @@ else
 fi
 
 # Ensure nix commnad is available in current shell session
-source /etc/bashrc
+if [ "$default_shell" = "/bin/zsh" ]; then
+  source /etc/zshrc
+elif [ "$default_shell" = "/bin/bash" ]; then
+  source /etc/bashrc
+else
+  echo "Nix won't work in current shell session! You should restart terminal and run this script again!"
+  exit 0
+fi
 
 echo "Installing home-manager and switching into a new generation..."
 # Run Home Manager with experimental features
