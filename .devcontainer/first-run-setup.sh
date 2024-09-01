@@ -48,10 +48,10 @@ while [[ "$#" -gt 0 ]]; do
 done
 
 # Get system information
-default_shell="$SHELL"
+current_shell="$(ps -p $$ -o comm= | sed 's/^-//')"
 platform="$(uname)"
 architecture="$(uname -m)"
-echo "Current platform: $platform-$architecture, default shell: $default_shell"
+echo "Current platform: $platform-$architecture, current shell: $current_shell"
 
 clone_repo() {
   repo_url="$1"
@@ -96,9 +96,9 @@ else
 fi
 
 # Ensure nix commnad is available in current shell session
-if [ "$default_shell" = "/bin/zsh" ]; then
+if [ "$current_shell" = "zsh" ]; then
   source /etc/zshrc
-elif [ "$default_shell" = "/bin/bash" ]; then
+elif [ "$current_shell" = "bash" ]; then
   source /etc/bashrc
 else
   echo "Nix won't work in current shell session! You should restart terminal and run this script again!"
@@ -120,9 +120,9 @@ if [ "$platform" = "Darwin" ]; then
     echo "Homebrew is already installed. Skipping..."
   fi
 
-  if [ "$default_shell" = "/bin/zsh" ]; then
+  if [ "$current_shell" = "zsh" ]; then
     config_file="$HOME/.zprofile"
-  elif [ "$default_shell" = "/bin/bash" ]; then
+  elif [ "$current_shell" = "bash" ]; then
     config_file="$HOME/.bashprofile"
   else
     config_file="$HOME/.profile"
