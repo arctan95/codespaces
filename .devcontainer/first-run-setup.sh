@@ -150,7 +150,7 @@ fi
 
 # Enable remote tunnel
 if [ "$enable_tunnel" = "true" ]; then
-  echo "Installing vscode cli..."
+  echo "Installing VSCode CLI..."
   sudo /bin/bash "$HOME/.codespaces/.devcontainer/local-features/remote-tunnel/install-vscode-cli.sh"
 fi
 
