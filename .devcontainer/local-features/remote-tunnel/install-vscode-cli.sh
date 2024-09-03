@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 if [ "$(id -u)" -ne 0 ]; then
     echo -e 'Script must be run as root. Use sudo or switch to root before running this script.'
@@ -19,28 +20,35 @@ fi
 case "$architecture" in
     x86_64 | amd64) architecture="x64";;
     aarch64 | arm64 | armv8*) architecture="arm64";;
-    *) echo "(!) Architecture $architecture unsupported"; exit 1 ;;
+    *) echo "(!) Architecture $architecture unsupported."; exit 1 ;;
 esac
 
-mkdir -p ${CODE_CLI_HOME}
-curl -sSL "https://code.visualstudio.com/sha/download?build=stable&os=cli-${platform}-${architecture}" -o /tmp/code-cli
+URL="https://code.visualstudio.com/sha/download?build=stable&os=cli-${platform}-${architecture}"
+echo "Downloading VSCode CLI from $URL"
+mkdir -p "${CODE_CLI_HOME}/tmp"
+cd "${CODE_CLI_HOME}/tmp"
+curl -sSL -OJ "$URL"
 
-if [ -f "/tmp/code-cli" ]; then
-    FILE_TYPE=$(file -b --mime-type "/tmp/code-cli")
-    case "$FILE_TYPE" in
-        application/zip)
-            unzip "/tmp/code-cli" -d "${CODE_CLI_HOME}"
-            ;;
-        application/gzip)
-            tar -xf "/tmp/code-cli" -C "${CODE_CLI_HOME}"
-            ;;
-        *)
-            echo "Unsupported file type: $FILE_TYPE"
-            exit 1
-            ;;
-    esac
-    mv "${CODE_CLI_HOME}/code" "${CODE_CLI_HOME}/code-cli"
+file_name=$(ls)
+case "$file_name" in
+    *.zip)
+        unzip -q "$file_name" -d "${CODE_CLI_HOME}/tmp"
+        ;;
+    *.tar.gz | *.tgz)
+        tar -xzf "$file_name" -C "${CODE_CLI_HOME}/tmp"
+        ;;
+    *.tar)
+        tar -xf "$file_name" -C "${CODE_CLI_HOME}/tmp"
+        ;;
+    *)
+        echo "Unsupported file format: $file_name"
+        exit 1
+        ;;
+esac
+
+if [ -f "${CODE_CLI_HOME}/tmp/code" ]; then
+    mv -f "${CODE_CLI_HOME}/tmp/code" "${CODE_CLI_HOME}/code-cli"
 fi
+rm -rf "${CODE_CLI_HOME}/tmp"
 
-rm /tmp/code-cli
-echo "Vscode cli has been installed! Run code-cli --help for more information."
+echo "VSCode CLI has been installed! Run code-cli --help for more information."

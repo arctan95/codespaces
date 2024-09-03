@@ -51,8 +51,8 @@ check_packages() {
     fi
 }
 
-echo "Installing vscode cli..."
-check_packages curl tar
+echo "Installing VSCode CLI..."
+check_packages curl tar unzip
 /bin/bash "$(dirname $0)/install-vscode-cli.sh"
 # Clean up
 rm -rf /var/lib/apt/lists/*
