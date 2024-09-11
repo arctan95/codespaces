@@ -1,12 +1,12 @@
 [git]
-username = "your name"
-email = "name@example.com"
+username = "arctan95"
+email = "jaeqentan@gmail.com"
 
 [omz]
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-theme = "robbyrussell"
+theme = "bira"
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
-plugins = ["git"]
+plugins = ["git", "pass", "zoxide"]
 
 [env]
 # Keep these envs unchanged!
@@ -16,12 +16,15 @@ HOMEBREW_BUNDLE_FILE = "~/.config/homebrew/Brewfile"
 [alias]
 hm = "home-manager"
 hms = "home-manager switch --impure"
+dev = "bash ~/.codespaces/.devcontainer/first-run-setup.sh"
 brewdump = "brew bundle dump --cask --mas --tap --describe --force"
 brewup = "brew bundle install"
+nixgc = "nix-collect-garbage --delete-old"
+ll = "ls -alh"
 
 [home.file]
-".ssh/ssh-ed25519.pub" = { text = "your ssh pubic key" }
+".ssh/ssh-ed25519.pub" = { text = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOK7ik+4zRv9ppx+7o/vPHb66NK0NtyICvM5/ogINEBO jaeqentan@gmail.com" }
 
 [nix]
 # https://search.nixos.org/packages
-packages = ["asdf-vm"]
+packages = ["asdf-vm", "gitui", "pass", "tldr", "tree", "neofetch", "zoxide"]
