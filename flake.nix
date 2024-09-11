@@ -14,22 +14,23 @@
   outputs = { self, nixpkgs, home-manager, systems, ... }:
     let
       eachSystem = nixpkgs.lib.genAttrs (import systems);
-      user = builtins.getEnv "USER";
-      # specialArgs = {};
+      userConfig = builtins.fromTOML (builtins.readFile "${builtins.getEnv "HOME"}/.codespaces/config.toml");
+      specialArgs = {
+        inherit userConfig;
+      };
     in
     {
       packages = eachSystem (system: {
         homeConfigurations = {
-          "${user}" = home-manager.lib.homeManagerConfiguration {
+          "${builtins.getEnv "USER"}" = home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages.${system};
-
             # Specify your home configuration modules here, for example,
             # the path to your home.nix.
             modules = [ .config/home-manager/home.nix ];
 
             # Optionally use extraSpecialArgs
             # to pass through arguments to home.nix
-            # extraSpecialArgs = specialArgs;
+            extraSpecialArgs = specialArgs;
           };
         };
       });
