@@ -1,0 +1,27 @@
+[git]
+username = "your name"
+email = "name@example.com"
+
+[omz]
+# https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+theme = "robbyrussell"
+# https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
+plugins = ["git", "z"]
+
+[env]
+# Keep these envs unchanged!
+DISABLE_MAGIC_FUNCTIONS = "true"
+HOMEBREW_BUNDLE_FILE = "~/.config/homebrew/Brewfile"
+
+[alias]
+hm = "home-manager"
+hms = "home-manager switch --impure"
+brewdump = "brew bundle dump --describe --force"
+brewup = "brew bundle install"
+
+[home.file]
+".ssh/ssh-ed25519.pub" = { text = "your ssh pubic key" }
+
+[nix]
+# https://search.nixos.org/packages
+packages = ["asdf-vm", "tree", "neofetch"]

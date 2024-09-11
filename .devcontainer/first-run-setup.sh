@@ -10,15 +10,21 @@ Usage: "$0" [OPTIONS]
 Options:
   --help                 Display this help message
   --version              Display version information
-  --restore_passwd       Sync private passwords into system
-  --restore_homebrew     Restore homebrew softwares into macOS system
-  --enable_tunnel        Enable vscode tunnel for remote development
+  --restore_passwd       (Optional) Sync private passwords into system
+  --restore_homebrew     (Optional) Restore homebrew softwares into macOS system
+  --enable_tunnel        (Optional) Enable vscode tunnel for remote development
+  --password_store       (Optional) Your private password store git repository. Default is 'https://github.com/arctan95/password-store.git'
+  --repository           Your codespaces git repository to clone. Default is 'https://github.com/arctan95/codespaces.git'
+  --flake_uri            Use your Home Manager configuration at flake-uri. Default is 'github:arctan95/codespaces'
 "
 
 version="v0.1.0"
 restore_homebrew=false
 restore_passwd=false
 enable_tunnel=false
+password_store="https://github.com/arctan95/password-store.git"
+repository="https://github.com/arctan95/codespaces.git"
+flake_uri="github:arctan95/codespaces"
 
 while [[ "$#" -gt 0 ]]; do
   case "$1" in
@@ -32,19 +38,33 @@ while [[ "$#" -gt 0 ]]; do
       ;;
     --restore_homebrew)
       restore_homebrew=true
+      shift
       ;;
     --restore_passwd)
       restore_passwd=true
+      shift
       ;;
     --enable_tunnel)
       enable_tunnel=true
+      shift
+      ;;
+    --password_store)
+      password_store="$2"
+      shift 2
+      ;;
+    --repository)
+      repository="$2"
+      shift 2
+      ;;
+    --flake_uri)
+      flake_uri="$2"
+      shift 2
       ;;
     *)
       echo "Unknown option: $1"
       exit 1
       ;;
   esac
-  shift
 done
 
 # Get system information
@@ -66,7 +86,7 @@ clone_repo() {
   fi
 }
 
-clone_repo "https://github.com/arctan95/codespaces.git" "$HOME/.codespaces"
+clone_repo "$repository" "$HOME/.codespaces"
 
 # Fix up github codespaces
 if [ "${CODESPACES}" = true ]; then
@@ -107,7 +127,7 @@ fi
 
 echo "Installing home-manager and switching into a new generation..."
 # Run Home Manager with experimental features
-nix run nixpkgs#home-manager -- switch --impure --flake github:arctan95/codespaces
+nix run nixpkgs#home-manager -- switch --impure --flake $flake_uri
 
 # Check if it's a macOS system
 if [ "$platform" = "Darwin" ]; then
@@ -144,7 +164,8 @@ if [ "$platform" = "Darwin" ]; then
   # Restore softwares from brewfile
   if [ "$restore_homebrew" = "true" ]; then
     echo "Restoring softwares from Brewfile..."
-    brew bundle install --file="$HOME/.codespaces/.config/homebrew/Brewfile"
+    ln -s "$HOME/.codespaces/.config/homebrew/Brewfile" "$HOME/.config/homebrew/Brewfile"
+    brew bundle install --file="$HOME/.config/homebrew/Brewfile"
   fi
 fi
 
@@ -157,7 +178,7 @@ fi
 # Restore private passwords
 if [ "$restore_passwd" = "true" ]; then
   echo "Configurating passwords..."
-  clone_repo "https://github.com/arctan95/password-store.git" "$HOME/.password-store"
+  clone_repo "$password_store" "$HOME/.password-store"
   /bin/bash "$HOME/.password-store/setup.sh"
 fi
 
@@ -168,5 +189,5 @@ fi
 
 echo "Installing asdf plugins and packages..."
 # Install asdf plugins and packages from .tool-versions file
-mv "$HOME/.codespaces/.tool-versions" "$HOME"
+ln -s "$HOME/.codespaces/.tool-versions" "$HOME/.tool-versions"
 cut -d ' ' -f1 "$HOME/.tool-versions" | xargs -I {} sh -c 'echo "Installing {}..."; asdf plugin add {} && asdf install {}'
