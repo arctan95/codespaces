@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, userConfig, pkgs, ... }:
 
 {
   home.username = builtins.getEnv "USER";
@@ -11,26 +11,15 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "23.11"; # Please read the comment before changing.
+  home.stateVersion = "24.05"; # Please read the comment before changing.
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
-    asdf-vm
-    pass
-    tldr
-    tree
-  ];
+  home.packages = map (name: pkgs.${name}) userConfig.nix.packages;
 
-  home.file = {
-    ".asdf/lib".source = "${pkgs.asdf-vm}/share/asdf-vm/lib";
-    ".asdf/completions".source = "${pkgs.asdf-vm}/share/asdf-vm/completions";
-    ".asdf/asdf.sh".source = "${pkgs.asdf-vm}/share/asdf-vm/asdf.sh";
-  };
+  home.file = userConfig.home.file;
 
-  home.sessionVariables = {
-    DISABLE_MAGIC_FUNCTIONS = "true";
-  };
+  home.sessionVariables = userConfig.env;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -38,8 +27,8 @@
   # Git
   programs.git = {
     enable = true;
-    userName = "arctan95";
-    userEmail = "jaeqentan@gmail.com";
+    userName = userConfig.git.username;
+    userEmail = userConfig.git.email;
   };
 
   # Zsh
@@ -49,16 +38,16 @@
     enableAutosuggestions = true;
     syntaxHighlighting.enable = true;
     historySubstringSearch.enable = true;
-
-    shellAliases = {
-      hm = "home-manager";
-      hms = "home-manager switch --impure";
-    };
+    shellAliases = userConfig.alias;
+    initExtra = ''
+      . "${pkgs.asdf-vm}/share/asdf-vm/asdf.sh"
+      . "${pkgs.asdf-vm}/share/asdf-vm/completions/asdf.bash"
+    '';
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "asdf" "git" "pass" "z" ];
-      theme = "bira";
+      plugins = userConfig.omz.plugins;
+      theme = userConfig.omz.theme;
     };
   };
 }
