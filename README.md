@@ -47,6 +47,9 @@ brew bundle dump --describe --force --file="/your/path/to/Brewfile" # backup
 brew bundle install --file="/your/path/to/Brewfile" # restore
 ```
 
+## Customization
+You can edit the [config.toml](config.toml) file to customize your settings.
+
 ## License
 
 Copyright (c) Microsoft Corporation. All rights reserved.
