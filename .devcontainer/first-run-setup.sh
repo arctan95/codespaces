@@ -8,8 +8,8 @@ help_message="
 Usage: "$0" [OPTIONS]
 
 Options:
-  --help                 Display this help message
-  --version              Display version information
+  -h, --help             Display this help message
+  -v, --version          Display version information
   --restore_passwd       (Optional) Sync private passwords into system
   --restore_homebrew     (Optional) Restore homebrew softwares into macOS system
   --enable_tunnel        (Optional) Enable vscode tunnel for remote development
@@ -26,42 +26,36 @@ password_store="https://github.com/arctan95/password-store.git"
 repository="https://github.com/arctan95/codespaces.git"
 flake_uri="github:arctan95/codespaces"
 
-while [[ "$#" -gt 0 ]]; do
-  case "$1" in
-    --help)
+for arg in "$@"; do
+  case $arg in
+     -h|--help)
       echo "$help_message"
       exit 0
       ;;
-    --version)
+    -v|--version)
       echo "$version"
       exit 0
       ;;
     --restore_homebrew)
       restore_homebrew=true
-      shift
       ;;
     --restore_passwd)
       restore_passwd=true
-      shift
       ;;
     --enable_tunnel)
       enable_tunnel=true
-      shift
       ;;
-    --password_store)
-      password_store="$2"
-      shift 2
+    --password_store=*)
+      password_store="${arg#*=}"
       ;;
-    --repository)
-      repository="$2"
-      shift 2
+    --repository=*)
+      repository="${arg#*=}"
       ;;
-    --flake_uri)
-      flake_uri="$2"
-      shift 2
+    --flake_uri=*)
+      flake_uri="${arg#*=}"
       ;;
     *)
-      echo "Unknown option: $1"
+      echo "Unknown option: $arg"
       exit 1
       ;;
   esac
