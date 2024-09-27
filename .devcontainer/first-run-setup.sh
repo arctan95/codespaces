@@ -142,6 +142,9 @@ if [ "$platform" = "Darwin" ]; then
     config_file="$HOME/.profile"
   fi
 
+  mkdir -p "$HOME/.config/homebrew"
+  ln -s "$HOME/.codespaces/.config/homebrew/Brewfile" "$HOME/.config/homebrew/Brewfile"
+
   case "$architecture" in
     x86_64 | amd64) brew_home="/usr/local/bin";;
     aarch64 | arm64 | armv8*) brew_home="/opt/homebrew/bin";;
@@ -158,7 +161,6 @@ if [ "$platform" = "Darwin" ]; then
   # Restore softwares from brewfile
   if [ "$restore_homebrew" = "true" ]; then
     echo "Restoring softwares from Brewfile..."
-    ln -s "$HOME/.codespaces/.config/homebrew/Brewfile" "$HOME/.config/homebrew/Brewfile"
     brew bundle install --file="$HOME/.config/homebrew/Brewfile"
   fi
 fi
