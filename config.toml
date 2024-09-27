@@ -16,7 +16,7 @@ HOMEBREW_BUNDLE_FILE = "~/.config/homebrew/Brewfile"
 [alias]
 hm = "home-manager"
 hms = "home-manager switch --impure"
-brewdump = "brew bundle dump --describe --force"
+brewdump = "brew bundle dump --cask --mas --tap --describe --force"
 brewup = "brew bundle install"
 
 [home.file]
