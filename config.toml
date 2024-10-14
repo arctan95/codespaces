@@ -6,7 +6,7 @@ email = "name@example.com"
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 theme = "robbyrussell"
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
-plugins = ["git", "z"]
+plugins = ["git"]
 
 [env]
 # Keep these envs unchanged!
@@ -24,4 +24,4 @@ brewup = "brew bundle install"
 
 [nix]
 # https://search.nixos.org/packages
-packages = ["asdf-vm", "tree", "neofetch"]
+packages = ["asdf-vm"]
