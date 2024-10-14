@@ -31,6 +31,12 @@
     userEmail = userConfig.git.email;
   };
 
+  # Fzf
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   # Zsh
   programs.zsh = {
     enable = true;
