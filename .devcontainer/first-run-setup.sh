@@ -143,7 +143,7 @@ if [ "$platform" = "Darwin" ]; then
   fi
 
   mkdir -p "$HOME/.config/homebrew"
-  ln -s "$HOME/.codespaces/.config/homebrew/Brewfile" "$HOME/.config/homebrew/Brewfile"
+  ln -sf "$HOME/.codespaces/.config/homebrew/Brewfile" "$HOME/.config/homebrew/Brewfile"
 
   case "$architecture" in
     x86_64 | amd64) brew_home="/usr/local/bin";;
@@ -180,10 +180,10 @@ fi
 
 # Create a monorepo for development
 if [ ! -d "$HOME/repositories" ]; then
-  ln -s "$HOME/.codespaces/repositories" "$HOME/repositories"
+  ln -sf "$HOME/.codespaces/repositories" "$HOME/repositories"
 fi
 
 echo "Installing asdf plugins and packages..."
 # Install asdf plugins and packages from .tool-versions file
-ln -s "$HOME/.codespaces/.tool-versions" "$HOME/.tool-versions"
+ln -sf "$HOME/.codespaces/.tool-versions" "$HOME/.tool-versions"
 cut -d ' ' -f1 "$HOME/.tool-versions" | xargs -I {} sh -c 'echo "Installing {}..."; asdf plugin add {} && asdf install {}'
