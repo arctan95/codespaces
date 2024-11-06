@@ -3,4 +3,4 @@ maven  3.5.4
 gradle 8.6
 golang 1.21.6
 nodejs 18.19.0
-rust   1.75.0
+rust   1.81.0
