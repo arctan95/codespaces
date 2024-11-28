@@ -47,6 +47,14 @@ brew bundle dump --describe --force --file="/your/path/to/Brewfile" # backup
 brew bundle install --file="/your/path/to/Brewfile" # restore
 ```
 
+## Enable Remote Tunnel
+
+If you want to enable `Remote Tunnel` provided by Visual Studio Code, simply run the following command.
+
+`curl -sSL https://raw.githubusercontent.com/arctan95/codespaces/HEAD/.devcontainer/local-features/remote-tunnel/install-vscode-cli.sh | sudo bash`
+
+Refer to [Remote Tunnels](https://code.visualstudio.com/docs/remote/tunnels) for more details.
+
 ## Customization
 You can edit the [config.toml](config.toml) file to customize your settings.
 
