@@ -8,6 +8,8 @@ cask "adrive"
 cask "android-platform-tools"
 # Tools for building Android applications
 cask "android-studio"
+# Tool to flash OS images to SD cards & USB drives
+cask "balenaetcher"
 # 3D creation suite
 cask "blender"
 # Free and open-source web browser
@@ -34,7 +36,7 @@ cask "kodi"
 cask "losslesscut"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
-# Web browser
+# Multi-platform web browser
 cask "microsoft-edge"
 # Office suite
 cask "microsoft-office-2019"
@@ -42,8 +44,6 @@ cask "microsoft-office-2019"
 cask "microsoft-remote-desktop"
 # Music streaming platform
 cask "neteasemusic"
-# Cloud storage service platform
-cask "nutstore"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Remote desktop
@@ -68,12 +68,18 @@ cask "telegram"
 cask "the-unarchiver"
 # VPN and WiFi proxy
 cask "thunder"
+# Platform for 3D content
+cask "unity"
+# Management tool for Unity
+cask "unity-hub"
 # Virtual machines UI using QEMU
 cask "utm"
 # Open-source code editor
 cask "visual-studio-code"
 # Create, manage, and run virtual machines
 cask "vmware-fusion"
+# Rust-based terminal
+cask "warp"
 # Free messaging and calling application
 cask "wechat"
 # Multiplayer code editor
