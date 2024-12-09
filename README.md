@@ -1,4 +1,4 @@
-# Linux Universal Image
+# Reproducible Development Environment
 
 ## Summary
 
@@ -16,7 +16,7 @@
 
 ## Description
 
-This is a fork from [devcontainers/images](https://github.com/devcontainers/images). If you like what you see but want to make a few additions or changes, you can use a custom Dockerfile to extend it and add whatever you need.
+This repository is a fork from [devcontainers/images](https://github.com/devcontainers/images). If you like what you see but want to make a few additions or changes, you can use a custom Dockerfile to extend it and add whatever you need.
 
 The container includes the `zsh` (and Oh My Zsh!) shell that you can opt into using instead of the default `bash`. It also includes [Nix](https://nixos.org/) as package manager, [asdf](https://asdf-vm.com/) as multiple runtime version manager. You can also set things up to access the container via SSH.
 
@@ -47,7 +47,7 @@ brew bundle dump --describe --force --file="/your/path/to/Brewfile" # backup
 brew bundle install --file="/your/path/to/Brewfile" # restore
 ```
 
-## Enable Remote Tunnel
+## Remote Tunnel
 
 If you want to enable `Remote Tunnel` provided by Visual Studio Code, simply run the following command.
 
