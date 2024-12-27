@@ -61,8 +61,7 @@
 			"settings": {},
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"GitHub.vscode-pull-request-github",
-				"maattdd.gitless"
+				"GitHub.vscode-pull-request-github"
 			]
 		}
 	}
