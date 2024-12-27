@@ -16,14 +16,16 @@ cask "blender"
 cask "chromium"
 # Universal database tool and SQL client
 cask "dbeaver-community"
-# App to build and share containerised applications and microservices
-cask "docker"
+# Replacement for Docker Desktop
+cask "orbstack"
 # Matrix collaboration client
 cask "element"
 # Launcher for *Epic Games* games
 cask "epic-games"
 # Web browser
 cask "firefox"
+# C# scripting capable version of Godot game engine
+cask "godot-mono"
 # Web browser
 cask "google-chrome"
 # Free and open-source media player
@@ -52,8 +54,6 @@ cask "parsec"
 cask "playcover-community"
 # Collaboration platform for API development
 cask "postman"
-# Instant messaging tool
-cask "qq"
 # IDE for application development
 cask "qt-creator"
 # Snip or pin screenshots
