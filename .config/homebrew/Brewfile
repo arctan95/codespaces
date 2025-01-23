@@ -34,8 +34,12 @@ cask "iina"
 cask "iterm2"
 # Free and open-source media player
 cask "kodi"
+# Software for Logitech devices
+cask "logi-options+"
 # Trims video and audio files losslessly
 cask "losslesscut"
+# File system integration
+cask "macfuse"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
 # Multi-platform web browser
@@ -56,6 +60,8 @@ cask "playcover-community"
 cask "postman"
 # IDE for application development
 cask "qt-creator"
+# Control your tools with a few keystrokes
+cask "raycast"
 # Snip or pin screenshots
 cask "snipaste"
 # Video game digital distribution service
@@ -74,6 +80,8 @@ cask "unity"
 cask "unity-hub"
 # Virtual machines UI using QEMU
 cask "utm"
+# Disk encryption software focusing on security based on TrueCrypt
+cask "veracrypt"
 # Open-source code editor
 cask "visual-studio-code"
 # Create, manage, and run virtual machines
