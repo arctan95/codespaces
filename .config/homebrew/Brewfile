@@ -24,8 +24,6 @@ cask "element"
 cask "epic-games"
 # Web browser
 cask "firefox"
-# C# scripting capable version of Godot game engine
-cask "godot-mono"
 # Web browser
 cask "google-chrome"
 # Free and open-source media player
