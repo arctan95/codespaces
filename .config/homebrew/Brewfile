@@ -28,12 +28,16 @@ cask "firefox"
 cask "google-chrome"
 # Free and open-source media player
 cask "iina"
+# IDE for Java development - community edition
+cask "intellij-idea-ce"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Free and open-source media player
 cask "kodi"
 # Software for Logitech devices
 cask "logi-options+"
+# Digital logic designer and simulator
+cask "logisim-evolution"
 # Trims video and audio files losslessly
 cask "losslesscut"
 # File system integration
@@ -48,6 +52,8 @@ cask "microsoft-office-2019"
 cask "microsoft-remote-desktop"
 # Music streaming platform
 cask "neteasemusic"
+# Cloud storage service platform
+cask "nutstore"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Remote desktop
@@ -66,6 +72,8 @@ cask "snipaste"
 cask "steam"
 # App to switch hosts
 cask "switchhosts"
+# Terminal emulator, SSH and serial client
+cask "tabby"
 # Messaging app with a focus on speed and security
 cask "telegram"
 # Unpacks archive files
@@ -84,8 +92,6 @@ cask "veracrypt"
 cask "visual-studio-code"
 # Create, manage, and run virtual machines
 cask "vmware-fusion"
-# Rust-based terminal
-cask "warp"
 # Free messaging and calling application
 cask "wechat"
 # Multiplayer code editor
