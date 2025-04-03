@@ -24,6 +24,8 @@ cask "element"
 cask "epic-games"
 # Web browser
 cask "firefox"
+# Audio player
+cask "foobar2000"
 # Web browser
 cask "google-chrome"
 # Free and open-source media player
@@ -40,8 +42,6 @@ cask "logi-options+"
 cask "logisim-evolution"
 # Trims video and audio files losslessly
 cask "losslesscut"
-# File system integration
-cask "macfuse"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
 # Multi-platform web browser
@@ -50,8 +50,6 @@ cask "microsoft-edge"
 cask "microsoft-office-2019"
 # Remote desktop client
 cask "microsoft-remote-desktop"
-# Music streaming platform
-cask "neteasemusic"
 # Cloud storage service platform
 cask "nutstore"
 # Knowledge base that works on top of a local folder of plain text Markdown files
