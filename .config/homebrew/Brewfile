@@ -18,6 +18,8 @@ cask "chromium"
 cask "dbeaver-community"
 # Replacement for Docker Desktop
 cask "orbstack"
+# Utilities designed to make common development tasks easier
+cask "devtoys"
 # Matrix collaboration client
 cask "element"
 # Launcher for *Epic Games* games
