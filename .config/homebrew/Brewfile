@@ -12,8 +12,6 @@ cask "android-studio"
 cask "balenaetcher"
 # 3D creation suite
 cask "blender"
-# Free and open-source web browser
-cask "chromium"
 # Universal database tool and SQL client
 cask "dbeaver-community"
 # Replacement for Docker Desktop
