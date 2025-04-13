@@ -15,6 +15,7 @@ Options:
   --enable_tunnel        (Optional) Enable vscode tunnel for remote development
   --password_store       (Optional) Your private password store git repository. Default is 'https://github.com/arctan95/password-store.git'
   --repository           Your codespaces git repository to clone. Default is 'https://github.com/arctan95/codespaces.git'
+  --branch               Your codespaces git repository branch to checkout. Default is 'master'
   --flake_uri            Use your Home Manager configuration at flake-uri. Default is 'github:arctan95/codespaces'
 "
 
@@ -24,6 +25,7 @@ restore_passwd=false
 enable_tunnel=false
 password_store="https://github.com/arctan95/password-store.git"
 repository="https://github.com/arctan95/codespaces.git"
+branch="master"
 flake_uri="github:arctan95/codespaces"
 
 for arg in "$@"; do
@@ -51,6 +53,9 @@ for arg in "$@"; do
     --repository=*)
       repository="${arg#*=}"
       ;;
+    --branch=*)
+      branch="${arg#*=}"
+      ;;
     --flake_uri=*)
       flake_uri="${arg#*=}"
       ;;
@@ -74,7 +79,7 @@ clone_repo() {
   # Check if the local directory already exists
   if [ ! -d "$local_dir" ]; then
     # Clone the GitHub repository to the specified local directory
-    git clone "$repo_url" "$local_dir"
+    git clone -b "$branch" "$repo_url" "$local_dir"
   else
     echo "Repository already cloned. Skipping..."
   fi
