@@ -48,6 +48,8 @@ cask "postman"
 cask "qt-creator"
 # Control your tools with a few keystrokes
 cask "raycast"
+# .NET IDE
+cask "rider"
 # Snip or pin screenshots
 cask "snipaste"
 # App to switch hosts
@@ -60,8 +62,6 @@ cask "telegram"
 cask "the-unarchiver"
 # Open-source code editor
 cask "visual-studio-code"
-# Free messaging and calling application
-cask "wechat"
 # Multiplayer code editor
 cask "zed"
 # Mesh VPN client
