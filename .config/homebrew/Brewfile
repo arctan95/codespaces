@@ -16,6 +16,8 @@ cask "clion"
 cask "copyq"
 # Universal database tool and SQL client
 cask "dbeaver-community"
+# Replacement for Docker Desktop
+cask "orbstack"
 # Utilities designed to make common development tasks easier
 cask "devtoys"
 # Matrix collaboration client
