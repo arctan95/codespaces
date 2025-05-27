@@ -12,8 +12,6 @@ cask "balenaetcher"
 cask "blender"
 # C and C++ IDE
 cask "clion"
-# Clipboard manager with advanced features
-cask "copyq"
 # Universal database tool and SQL client
 cask "dbeaver-community"
 # Replacement for Docker Desktop
