@@ -10,6 +10,10 @@ cask "android-studio"
 cask "balenaetcher"
 # 3D creation suite
 cask "blender"
+# C and C++ IDE
+cask "clion"
+# Clipboard manager with advanced features
+cask "copyq"
 # Universal database tool and SQL client
 cask "dbeaver-community"
 # Utilities designed to make common development tasks easier
@@ -48,6 +52,8 @@ cask "microsoft-office-2019"
 cask "microsoft-remote-desktop"
 # Cloud storage service platform
 cask "nutstore"
+# Open-source software for live streaming and screen recording
+cask "obs"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Remote desktop
@@ -60,6 +66,8 @@ cask "qbittorrent"
 cask "raycast"
 # .NET IDE
 cask "rider"
+# Rust IDE
+cask "rustrover"
 # Snip or pin screenshots
 cask "snipaste"
 # Video game digital distribution service
@@ -88,6 +96,8 @@ cask "vmware-fusion"
 cask "wechat"
 # Wine wrapper built with SwiftUI
 cask "whisky"
+# Mind mapping and brainstorming tool
+cask "xmind"
 # Multiplayer code editor
 cask "zed"
 # Mesh VPN client
