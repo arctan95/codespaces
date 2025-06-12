@@ -183,11 +183,6 @@ if [ "$restore_passwd" = "true" ]; then
   /bin/bash "$HOME/.password-store/setup.sh"
 fi
 
-# Create a monorepo for development
-if [ ! -d "$HOME/repositories" ]; then
-  ln -sf "$HOME/.codespaces/repositories" "$HOME/repositories"
-fi
-
 echo "Installing asdf plugins and packages..."
 # Install asdf plugins and packages from .tool-versions file
 ln -sf "$HOME/.codespaces/.tool-versions" "$HOME/.tool-versions"
