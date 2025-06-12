@@ -43,8 +43,8 @@
 		}
 	},
 
-	"workspaceMount": "source=${localWorkspaceFolder}/repositories,target=/home/codespace/repositories,type=bind,consistency=cached",
-	"workspaceFolder": "/home/codespace/repositories",
+	"workspaceMount": "source=${localEnv:HOME}/projects,target=/home/codespace/projects,type=bind,consistency=cached",
+	"workspaceFolder": "/home/codespace/projects",
 
 	"mounts": [
 		"source=nix,target=/nix,type=volume"
