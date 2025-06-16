@@ -27,4 +27,4 @@ ll = "ls -alh"
 
 [nix]
 # https://search.nixos.org/packages
-packages = ["asdf-vm", "gitui", "pass", "tldr", "tree", "neofetch", "zoxide"]
+packages = ["asdf-vm", "lazygit", "pass", "tldr", "tree", "fastfetch", "zoxide"]
