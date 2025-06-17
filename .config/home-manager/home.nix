@@ -37,15 +37,24 @@
     enableZshIntegration = true;
   };
 
+  # Neovim
+  programs.neovim = {
+    enable = true;
+    plugins = with pkgs.vimPlugins; [
+      lazy-nvim
+    ];
+    extraLuaConfig = builtins.readFile "${builtins.getEnv "HOME"}/.codespaces/.config/nvim/init.lua";
+  };
+
   # Zsh
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     historySubstringSearch.enable = true;
     shellAliases = userConfig.alias;
-    initExtra = ''
+    initContent = ''
       . "${pkgs.asdf-vm}/share/asdf-vm/asdf.sh"
       . "${pkgs.asdf-vm}/share/asdf-vm/completions/asdf.bash"
     '';
