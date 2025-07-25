@@ -98,7 +98,7 @@ fi
 
 echo "Installing Nix..."
 # Check if Nix is already installed
-if [ -e "/nix" ]; then
+if command -v nix >/dev/null 2>&1; then
   echo "Nix already installed. Skipping..."
 else
   # Install Nix
