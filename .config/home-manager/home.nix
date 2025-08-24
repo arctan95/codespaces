@@ -55,8 +55,7 @@
     historySubstringSearch.enable = true;
     shellAliases = userConfig.alias;
     initContent = ''
-      . "${pkgs.asdf-vm}/share/asdf-vm/asdf.sh"
-      . "${pkgs.asdf-vm}/share/asdf-vm/completions/asdf.bash"
+      export PATH="$HOME/.asdf/shims:$PATH"
     '';
 
     oh-my-zsh = {

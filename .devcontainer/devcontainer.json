@@ -18,6 +18,9 @@
 			"version": "latest",
 			"extraNixConfig": "filter-syscalls = false,sandbox = false,experimental-features = nix-command flakes"
 		},
+		"./local-features/asdf-go": {
+			"version": "latest"
+		},
 		"./local-features/remote-tunnel": {
 			"version": "latest"
 		}
@@ -26,6 +29,7 @@
 	"overrideFeatureInstallOrder": [
 		"ghcr.io/devcontainers/features/common-utils",
 		"ghcr.io/devcontainers/features/nix",
+		"./local-features/asdf-go",
 		"./local-features/remote-tunnel"
 	],
 

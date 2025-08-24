@@ -197,5 +197,6 @@ mkdir -p "$HOME/projects"
 
 echo "Installing asdf plugins and packages..."
 # Install asdf plugins and packages from .tool-versions file
+sudo /bin/bash "$HOME/.codespaces/.devcontainer/local-features/asdf-go/install-asdf-go.sh"
 ln -sf "$HOME/.codespaces/.tool-versions" "$HOME/.tool-versions"
 cut -d ' ' -f1 "$HOME/.tool-versions" | xargs -I {} sh -c 'echo "Installing {}..."; asdf plugin add {} && asdf install {}'

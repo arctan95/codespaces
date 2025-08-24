@@ -25,4 +25,4 @@ brewup = "brew bundle install"
 
 [nix]
 # https://search.nixos.org/packages
-packages = ["asdf-vm"]
+packages = ["fastfetch"]
