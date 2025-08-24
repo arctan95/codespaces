@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:stable-slim
 
 COPY first-run-notice.txt /tmp/scripts/
 
@@ -10,7 +10,7 @@ ENV LANG="C.UTF-8"
 RUN apt-get update \
     && apt-get -y install acl build-essential cmake cppcheck valgrind clang lldb llvm gdb python3-dev \
     # Install tools and shells not in common script
-    && apt-get install -yq vim vim-doc xtail software-properties-common libsecret-1-dev \
+    && apt-get install -yq vim vim-doc xtail libsecret-1-dev \
     # Install additional tools
     && apt-get install -y --no-install-recommends libnss3 libnspr4 libatk-bridge2.0-0 libatk1.0-0 libx11-6 libpangocairo-1.0-0 \
                                                   libx11-xcb1 libcups2 libxcomposite1 libxdamage1 libxfixes3 libpango-1.0-0 libgbm1 libgtk-3-0 \
