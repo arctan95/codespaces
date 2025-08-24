@@ -85,6 +85,13 @@ clone_repo() {
   fi
 }
 
+# Install basic tools
+if command -v apt >/dev/null 2>&1; then
+  echo "Installing basic tools..."
+  sudo apt update
+  sudo apt install -y curl git xz-utils
+fi
+
 clone_repo "$repository" "$HOME/.codespaces"
 
 # Fix up github codespaces
