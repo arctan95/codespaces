@@ -81,7 +81,9 @@ clone_repo() {
     # Clone the GitHub repository to the specified local directory
     git clone -b "$branch" "$repo_url" "$local_dir"
   else
-    echo "Repository already cloned. Skipping..."
+    echo "Repository already cloned. Fetching latest..."
+    cd "$local_dir"
+    git pull
   fi
 }
 
