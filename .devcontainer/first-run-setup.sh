@@ -183,6 +183,9 @@ if [ "$restore_passwd" = "true" ]; then
   /bin/bash "$HOME/.password-store/setup.sh"
 fi
 
+# Create a directory for development
+mkdir -p "$HOME/projects"
+
 echo "Installing asdf plugins and packages..."
 # Install asdf plugins and packages from .tool-versions file
 ln -sf "$HOME/.codespaces/.tool-versions" "$HOME/.tool-versions"
