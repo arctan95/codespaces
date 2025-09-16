@@ -193,7 +193,7 @@ if [ "$restore_passwd" = "true" ]; then
 fi
 
 # Create a directory for development
-mkdir -p "$HOME/projects"
+mkdir -p "$HOME/Projects"
 
 echo "Installing asdf plugins and packages..."
 # Install asdf plugins and packages from .tool-versions file
