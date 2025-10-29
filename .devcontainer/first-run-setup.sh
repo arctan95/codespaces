@@ -172,6 +172,9 @@ if [ "$platform" = "Darwin" ]; then
     echo "The brew shellenv is already configured in $config_file. Skipping..."
   fi
 
+  # Install basic tools
+  brew install wget
+
   # Restore softwares from brewfile
   if [ "$restore_homebrew" = "true" ]; then
     echo "Restoring softwares from Brewfile..."
