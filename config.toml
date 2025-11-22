@@ -13,6 +13,7 @@ plugins = ["git"]
 DISABLE_MAGIC_FUNCTIONS = "true"
 HOMEBREW_BUNDLE_FILE = "~/.config/homebrew/Brewfile"
 HOMEBREW_NO_AUTO_UPDATE = "true"
+ELECTRON_OZONE_PLATFORM_HINT = "auto"
 
 [alias]
 hm = "home-manager"
