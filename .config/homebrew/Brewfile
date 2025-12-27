@@ -84,10 +84,6 @@ cask "tabby"
 cask "telegram"
 # Unpacks archive files
 cask "the-unarchiver"
-# Platform for 3D content
-cask "unity"
-# Management tool for Unity
-cask "unity-hub"
 # Virtual machines UI using QEMU
 cask "utm"
 # Disk encryption software focusing on security based on TrueCrypt
