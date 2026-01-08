@@ -47,12 +47,14 @@
 		}
 	},
 
-	"workspaceMount": "source=${localEnv:HOME}/projects,target=/home/codespace/projects,type=bind,consistency=cached",
-	"workspaceFolder": "/home/codespace/projects",
+	"workspaceMount": "source=${localEnv:HOME}/Projects,target=/home/codespace/Projects,type=bind,consistency=cached",
+	"workspaceFolder": "/home/codespace/Projects",
 
 	"mounts": [
 		"source=nix,target=/nix,type=volume"
 	],
+
+	"initializeCommand": "mkdir -p ${localEnv:HOME}/Projects",
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "curl -sSL https://raw.githubusercontent.com/arctan95/codespaces/HEAD/.devcontainer/first-run-setup.sh | bash",
