@@ -28,6 +28,8 @@ cask "firefox"
 cask "foobar2000"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# C# scripting capable version of Godot game engine
+cask "godot-mono"
 # Web browser
 cask "google-chrome"
 # Free and open-source media player
