@@ -72,6 +72,9 @@
     historySubstringSearch.enable = true;
     shellAliases = userConfig.alias;
     initContent = ''
+      if [[ "$(uname)" == "Darwin" ]]; then
+        export PATH="$HOME/.local/bin:$PATH"
+      fi
       export PATH="$HOME/.asdf/shims:$PATH"
     '';
 
