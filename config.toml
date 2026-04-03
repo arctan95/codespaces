@@ -27,3 +27,4 @@ brewup = "brew bundle install"
 [nix]
 # https://search.nixos.org/packages
 packages = ["fastfetch"]
+version = "24.05"
