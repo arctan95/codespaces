@@ -23,19 +23,21 @@
 
   # Set zsh as default shell on activation
   home.activation.make-zsh-default-shell = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    # if zsh is not the current shell
-      PATH="/usr/bin:/bin:$PATH"
-      ZSH_PATH="/home/${builtins.getEnv "USER"}/.nix-profile/bin/zsh"
-      if [[ $(getent passwd ${builtins.getEnv "USER"}) != *"$ZSH_PATH" ]]; then
-        echo "Setting zsh as default shell..."
-        if ! grep -q $ZSH_PATH /etc/shells; then
-          echo "Adding zsh to /etc/shells"
-          run echo "$ZSH_PATH" | sudo tee -a /etc/shells
+    if [[ "$(uname)" == "Linux" ]]; then
+      # if zsh is not the current shell
+        PATH="/usr/bin:/bin:$PATH"
+        ZSH_PATH="/home/${builtins.getEnv "USER"}/.nix-profile/bin/zsh"
+        if [[ $(getent passwd ${builtins.getEnv "USER"}) != *"$ZSH_PATH" ]]; then
+          echo "Setting zsh as default shell..."
+          if ! grep -q $ZSH_PATH /etc/shells; then
+            echo "Adding zsh to /etc/shells"
+            run echo "$ZSH_PATH" | sudo tee -a /etc/shells
+          fi
+          echo "Running chsh to make zsh the default shell"
+          run sudo chsh -s $ZSH_PATH ${builtins.getEnv "USER"}
+          echo "Zsh is now set as default shell!"
         fi
-        echo "Running chsh to make zsh the default shell"
-        run sudo chsh -s $ZSH_PATH ${builtins.getEnv "USER"}
-        echo "Zsh is now set as default shell!"
-      fi
+    fi
   '';
 
   # Let Home Manager install and manage itself.
