@@ -80,8 +80,6 @@ cask "snipaste"
 cask "steam"
 # App to switch hosts
 cask "switchhosts"
-# Terminal emulator, SSH and serial client
-cask "tabby"
 # Messaging app with a focus on speed and security
 cask "telegram"
 # Unpacks archive files
