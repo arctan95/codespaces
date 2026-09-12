@@ -94,10 +94,6 @@ cask "visual-studio-code"
 cask "vmware-fusion"
 # Free messaging and calling application
 cask "wechat"
-# Wine wrapper built with SwiftUI
-cask "whisky"
-# Mind mapping and brainstorming tool
-cask "xmind"
 # Multiplayer code editor
 cask "zed"
 # Mesh VPN client
