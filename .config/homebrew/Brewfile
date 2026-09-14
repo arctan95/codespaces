@@ -68,8 +68,6 @@ cask "postman"
 cask "qbittorrent"
 # Instant messaging tool
 cask "qq"
-# Control your tools with a few keystrokes
-cask "raycast"
 # .NET IDE
 cask "rider"
 # Rust IDE
