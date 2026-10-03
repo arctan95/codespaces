@@ -27,4 +27,4 @@ jobs:
         uses: devcontainers/ci@v0.3
         with:
           imageName: ghcr.io/arctan95/codespaces
-          platform: linux/amd64
+          platform: linux/amd64,linux/arm64
