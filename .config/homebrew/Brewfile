@@ -42,8 +42,6 @@ cask "iterm2"
 cask "kodi"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
-# Software for Logitech devices
-cask "logi-options+"
 # Digital logic designer and simulator
 cask "logisim-evolution"
 # Trims video and audio files losslessly
