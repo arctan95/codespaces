@@ -6,8 +6,6 @@ brew "mas"
 cask "android-platform-tools"
 # Tools for building Android applications
 cask "android-studio"
-# Tool to flash OS images to SD cards & USB drives
-cask "balenaetcher"
 # 3D creation suite
 cask "blender"
 # C and C++ IDE
