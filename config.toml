@@ -18,7 +18,7 @@ ELECTRON_OZONE_PLATFORM_HINT = "auto"
 [alias]
 hm = "home-manager"
 hms = "home-manager switch --impure"
-brewdump = "brew bundle dump --cask --mas --tap --describe --force"
+brewdump = "brew bundle dump --cask --mas --tap --force"
 brewup = "brew bundle install"
 
 [home.file]
